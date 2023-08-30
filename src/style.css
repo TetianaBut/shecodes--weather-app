@@ -43,8 +43,15 @@ footer {
   min-width: 300px;
   padding: 15px;
 }
+.city-favorites {
+  margin-bottom: 15px;
+}
+.item-city-favorites {
+  display: inline;
+  font-size: 16px;
+  padding: 0 10px;
+}
 .search-input::placeholder {
-  /* line-height: 16px; */
   color: rgba(39, 33, 66, 0.4);
 }
 .Weather-temperature img {

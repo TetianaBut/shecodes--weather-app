@@ -15,60 +15,76 @@
   </head>
   <body>
     <div class="container">
-      <main class="Weather-container">
-        <form id="form-input" class="mb-3">
-          <div class="row">
-            <div class="col-6">
-              <input
-                type="search"
-                placeholder="Enter a city"
-                class="form-control shadow-sm search-input"
-                id="city-input"
-                autocomplete="off"
-                autofocus="on"
-                required
-              />
-            </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                class="btn btn-primary shadow-sm w-100"
-                value="Search"
-              />
-            </div>
-            <div class="col-3">
-              <button
-                type="button"
-                class="btn btn-success shadow-sm w-100"
-                id="current-location-button"
-              >
-                Current
-              </button>
-            </div>
-          </div>
-        </form>
-        <div>
-          <h1>Kyiv</h1>
-          <ul>
-            <li id="input-time">Monday 19:20</li>
-            <li id="description">Rainy</li>
+      <div class="Weather-container">
+        <header>
+          <ul class="city-favorites">
+            <li class="item-city-favorites" id="kyiv"><a href="#">Kyiv</a></li>
+            <li class="item-city-favorites" id="paris">
+              <a href="#">Paris</a>
+            </li>
+            <li class="item-city-favorites" id="sydney">
+              <a href="#">Sydney</a>
+            </li>
+            <li class="item-city-favorites" id="newYork">
+              <a href="#">New York</a>
+            </li>
           </ul>
-        </div>
-        <div class="row">
-          <div class="col-6 d-flex Weather-temperature">
-            <img id="weather-icon" src="" alt="" />
-            <strong id="setTempValue">22</strong>
-            <span> <a href="#">°C</a> |<a href="#">°F</a> </span>
-          </div>
-          <div class="col-6">
+        </header>
+        <main>
+          <form id="form-input" class="mb-3">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="search"
+                  placeholder="Enter a city"
+                  class="form-control shadow-sm search-input"
+                  id="city-input"
+                  autocomplete="off"
+                  autofocus="on"
+                  required
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  class="btn btn-primary shadow-sm w-100"
+                  value="Search"
+                />
+              </div>
+              <div class="col-3">
+                <button
+                  type="button"
+                  class="btn btn-success shadow-sm w-100"
+                  id="current-location-button"
+                >
+                  Current
+                </button>
+              </div>
+            </div>
+          </form>
+          <div>
+            <h1>Kyiv</h1>
             <ul>
-              <li>Precipitation : <span id="clouds"></span>%</li>
-              <li>Humidity : <span id="humidity"></span>%</li>
-              <li>Wind : <span id="wind">km/h</span></li>
+              <li id="input-time">Monday 19:20</li>
+              <li id="description">Rainy</li>
             </ul>
           </div>
-        </div>
-      </main>
+          <div class="row">
+            <div class="col-6 d-flex Weather-temperature">
+              <img id="weather-icon" src="" alt="" />
+              <strong id="setTempValue">22</strong>
+              <span> <a href="#">°C</a> |<a href="#">°F</a> </span>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Precipitation : <span id="clouds"></span>%</li>
+                <li>Humidity : <span id="humidity"></span>%</li>
+                <li>Wind : <span id="wind">km/h</span></li>
+              </ul>
+            </div>
+          </div>
+        </main>
+      </div>
       <footer>
         <!-- <p class="footer"> -->
         This page was built by

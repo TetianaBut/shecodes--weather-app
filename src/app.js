@@ -89,3 +89,24 @@ cityInput.addEventListener("submit", searchCityName);
 // current City Name
 let currentCity = document.querySelector("#current-location-button");
 currentCity.addEventListener("click", currentLocation);
+// favorite navigator
+function nameCityKyiv(event) {
+  event.preventDefault();
+  retrieveDataWeather(`q=${document.querySelector("#kyiv").textContent}`);
+}
+function nameCityParis(event) {
+  event.preventDefault();
+  retrieveDataWeather(`q=${document.querySelector("#paris").textContent}`);
+}
+function nameCitySydney(event) {
+  event.preventDefault();
+  retrieveDataWeather(`q=${document.querySelector("#sydney").textContent}`);
+}
+function nameCityNewYork(event) {
+  event.preventDefault();
+  retrieveDataWeather(`q=${document.querySelector("#newYork").textContent}`);
+}
+document.querySelector("#kyiv").addEventListener("click", nameCityKyiv);
+document.querySelector("#paris").addEventListener("click", nameCityParis);
+document.querySelector("#sydney").addEventListener("click", nameCitySydney);
+document.querySelector("#newYork").addEventListener("click", nameCityNewYork);
