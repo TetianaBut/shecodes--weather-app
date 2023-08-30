@@ -1,2 +1,46 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 h1 {
+  color: #878787;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28px;
+  margin: 15px 0 0;
+}
+ul {
+  margin: 0 0 10px;
+  padding: 0;
+}
+li {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  list-style: none;
+  text-transform: capitalize;
+}
+li span {
+  text-transform: lowercase;
+}
+a {
+  color: rgb(89, 121, 246);
+  text-decoration: none;
+  background: transparent;
+}
+a:hover {
+  text-decoration: underline;
+}
+footer {
+  font-size: 12px;
+  text-align: center;
+}
+.Weather-container {
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  box-shadow: 3px 4px 6px rgba(37, 39, 89, 0.3);
+  margin: 20px auto;
+  max-width: 640px;
+  min-width: 300px;
+  padding: 15px;
 }
