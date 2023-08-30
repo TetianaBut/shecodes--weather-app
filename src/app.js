@@ -67,6 +67,16 @@ function searchCityName(event) {
   retrieveDataWeather(`q=${inputCityName}`);
 }
 
+// current City Name
+function currentLocation(event) {
+  function retrievePosition(position) {
+    let positionCityName = `lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
+    retrieveDataWeather(positionCityName);
+  }
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
 // start
 let currentTemp = 0;
 let currentWind = 0;
@@ -76,3 +86,6 @@ retrieveDataWeather("q=kyiv");
 // search City Name
 let cityInput = document.querySelector("#form-input");
 cityInput.addEventListener("submit", searchCityName);
+// current City Name
+let currentCity = document.querySelector("#current-location-button");
+currentCity.addEventListener("click", currentLocation);
