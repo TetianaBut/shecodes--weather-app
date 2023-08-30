@@ -5,7 +5,6 @@ function displaytDate() {
   let hours = nowDate.getHours();
   let minutes = nowDate.getMinutes();
   let day = nowDate.getDay();
-
   let days = [
     "Sunday",
     "Monday",

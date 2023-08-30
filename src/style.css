@@ -18,10 +18,9 @@ li {
   font-weight: 100;
   line-height: 19px;
   list-style: none;
-  text-transform: capitalize;
 }
-li span {
-  text-transform: lowercase;
+li::first-letter {
+  text-transform: uppercase;
 }
 a {
   color: rgb(89, 121, 246);
