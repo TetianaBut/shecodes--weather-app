@@ -58,8 +58,21 @@ function retrieveDataWeather(cityName) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?${cityName}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
+
+// search  City  Name
+function searchCityName(event) {
+  event.preventDefault();
+  let inputCityName = document.querySelector("#city-input").value;
+  //   console.log(`q=${inputCityName}`);
+  retrieveDataWeather(`q=${inputCityName}`);
+}
+
+// start
 let currentTemp = 0;
 let currentWind = 0;
 let unitWind = "km/h";
 let unit = "metric";
 retrieveDataWeather("q=kyiv");
+// search City Name
+let cityInput = document.querySelector("#form-input");
+cityInput.addEventListener("submit", searchCityName);

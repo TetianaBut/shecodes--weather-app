@@ -44,7 +44,7 @@ footer {
   padding: 15px;
 }
 .search-input::placeholder {
-  line-height: 16px;
+  /* line-height: 16px; */
   color: rgba(39, 33, 66, 0.4);
 }
 .Weather-temperature img {
