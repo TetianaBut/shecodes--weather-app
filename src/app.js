@@ -24,6 +24,30 @@ function displaytDate() {
 }
 
 // set Unit Temperature
+function setUnitTemperature(event) {
+  event.preventDefault();
+  if (unit === "metric") {
+    currentTemp = (currentTemp * 9) / 5 + 32;
+    document.querySelector("#units").innerHTML = "°F";
+    currentWind = currentWind * 0.621371;
+    unitWind = "miles/h";
+    unit = "imperial";
+  } else {
+    currentTemp = ((currentTemp - 32) * 5) / 9;
+    document.querySelector("#units").innerHTML = `°C`;
+    currentWind = currentWind * 1.60934;
+    unitWind = "km/h";
+    unit = "metric";
+  }
+  document.querySelector("#setTempValue").innerHTML = `${Math.round(
+    currentTemp
+  )}`;
+  document.querySelector("#wind").innerHTML = ` ${Math.round(
+    currentWind
+  )}${unitWind}`;
+}
+
+// set Unit Temperature
 function displayWeatherCondition(response) {
   //   console.log(response.data);
   let displayCity = document.querySelector("h1");
@@ -110,3 +134,6 @@ document.querySelector("#kyiv").addEventListener("click", nameCityKyiv);
 document.querySelector("#paris").addEventListener("click", nameCityParis);
 document.querySelector("#sydney").addEventListener("click", nameCitySydney);
 document.querySelector("#newYork").addEventListener("click", nameCityNewYork);
+// set Unit Temperature
+let setTempValue = document.querySelector("#units");
+setTempValue.addEventListener("click", setUnitTemperature);
