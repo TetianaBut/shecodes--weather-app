@@ -14,8 +14,76 @@
   </head>
   <body>
     <div class="container">
-      <h1>shecodes--weatherapp</h1>
-      <a href="" class="btn btn-primary">Click me</a>
+      <main class="Weather-container">
+        <form id="form-input" class="mb-3">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city"
+                class="form-control shadow-sm"
+                id="city-input"
+                autocomplete="off"
+                autofocus="on"
+                required
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                class="btn btn-primary shadow-sm w-100"
+                value="Search"
+              />
+            </div>
+          </div>
+        </form>
+        <div>
+          <h1>Kyiv</h1>
+          <ul>
+            <li id="input-time">Monday 19:20</li>
+            <li id="description">Rainy</li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-6 d-flex Weather-temperature">
+            <img id="weather-icon" src="" alt="" width="64" />
+            <strong id="setTempValue">22</strong>
+            <span> <a href="#">°C</a>|<a href="#">°F</a> </span>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Precipitation : <span id="clouds"></span>%</li>
+              <li>Humidity : <span id="humidity"></span>%</li>
+              <li>Wind : <span id="wind"></span></li>
+            </ul>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p class="footer">
+          This page was built by
+          <a
+            href="https://www.shecodes.io/graduates/93245-tetiana-butok"
+            target="_blank"
+          >
+            👩‍💻 Tetiana Butok
+          </a>
+          and open-
+          <a
+            href="https://github.com/TetianaBut/shecodes--weather-app"
+            target="_blank"
+          >
+            sourse code on GitHub
+          </a>
+          and
+          <a
+            href="https://radiant-beijinho-17f8aa.netlify.app/"
+            target="_blank"
+          >
+            hosted on Netlify</a
+          >
+        </p>
+      </footer>
     </div>
     <script src="./src/app.js"></script>
   </body>
