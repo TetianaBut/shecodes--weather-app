@@ -44,3 +44,17 @@ footer {
   min-width: 300px;
   padding: 15px;
 }
+.Weather-temperature img {
+  height: 64px;
+  width: 64px;
+}
+.Weather-temperature strong {
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+.Weather-temperature a {
+  font-size: 16px;
+  line-height: 1.7;
+}
