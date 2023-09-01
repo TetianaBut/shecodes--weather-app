@@ -46,6 +46,61 @@ function setUnitTemperature(event) {
     currentWind
   )}${unitWind}`;
 }
+function formatDayForecast(timestamp) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let nowDate = new Date(timestamp * 1000);
+  let day = nowDate.getDay();
+  console.log(days[day]);
+  return days[day];
+}
+
+function displayForecast(response) {
+  // console.log(response.data.daily);
+
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector(".weather-week");
+  let forecastHTML = "";
+  // let forecastHTML = `<div class="row weather-week">`;
+  // let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col-2 weather-forecast-date">
+                  <div>${formatDayForecast(forecastDay.dt)}</div>
+                  <img
+                    src="https://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png"
+                    alt="${forecastDay.weather[0].description}"
+                    width="64"
+                  />
+                  <div class="weather-forecast-temp">
+                    <span class="weather-forecast-max">${Math.round(
+                      forecastDay.temp.max
+                    )}°  </span>
+                    <span class="weather-forecast-min">${Math.round(
+                      forecastDay.temp.min
+                    )}°</span>
+                  </div>
+                </div>
+              `;
+    }
+  });
+
+  // forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "281450ec88936f4fa8ee9864682b49a0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?${coordinates}&appid=${apiKey}&units=${unit}`;
+  //  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${unit}`;
+  // console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 
 // set Unit Temperature
 function displayWeatherCondition(response) {
@@ -75,6 +130,9 @@ function displayWeatherCondition(response) {
     currentWind = currentWind * 3.6;
   }
   displayWind.innerHTML = ` ${Math.round(currentWind)}${unitWind}`;
+  positionCityName = `lat=${response.data.coord.lat}&lon=${response.data.coord.lon}`;
+  // getForecast(response.data.coord);
+  getForecast(positionCityName);
 }
 
 function retrieveDataWeather(cityName) {
@@ -106,6 +164,7 @@ let currentTemp = 0;
 let currentWind = 0;
 let unitWind = "km/h";
 let unit = "metric";
+let positionCityName = "";
 retrieveDataWeather("q=kyiv");
 // search City Name
 let cityInput = document.querySelector("#form-input");
