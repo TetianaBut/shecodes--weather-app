@@ -122,9 +122,9 @@ function nameCityParis(event) {
   event.preventDefault();
   retrieveDataWeather(`q=${document.querySelector("#paris").textContent}`);
 }
-function nameCitySydney(event) {
+function nameCityBrno(event) {
   event.preventDefault();
-  retrieveDataWeather(`q=${document.querySelector("#sydney").textContent}`);
+  retrieveDataWeather(`q=${document.querySelector("#brno").textContent}`);
 }
 function nameCityNewYork(event) {
   event.preventDefault();
@@ -132,7 +132,7 @@ function nameCityNewYork(event) {
 }
 document.querySelector("#kyiv").addEventListener("click", nameCityKyiv);
 document.querySelector("#paris").addEventListener("click", nameCityParis);
-document.querySelector("#sydney").addEventListener("click", nameCitySydney);
+document.querySelector("#brno").addEventListener("click", nameCityBrno);
 document.querySelector("#newYork").addEventListener("click", nameCityNewYork);
 // set Unit Temperature
 let setTempValue = document.querySelector("#units");

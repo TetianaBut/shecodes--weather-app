@@ -22,8 +22,8 @@
             <li class="item-city-favorites" id="paris">
               <a href="#">Paris</a>
             </li>
-            <li class="item-city-favorites" id="sydney">
-              <a href="#">Sydney</a>
+            <li class="item-city-favorites" id="brno">
+              <a href="#">Brno</a>
             </li>
             <li class="item-city-favorites" id="newYork">
               <a href="#">New York</a>
@@ -33,31 +33,31 @@
         <main>
           <form id="form-input" class="mb-3">
             <div class="row">
-              <div class="col-6">
+              <div class="col-5">
                 <input
                   type="search"
                   placeholder="Enter a city"
-                  class="form-control shadow-sm search-input"
                   id="city-input"
                   autocomplete="off"
                   autofocus="on"
+                  class="form-control search-input"
                   required
                 />
               </div>
               <div class="col-3">
                 <input
                   type="submit"
-                  class="btn btn-primary shadow-sm w-100"
+                  class="btn btn-primary w-100 location-btn"
                   value="Search"
                 />
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <button
                   type="button"
-                  class="btn btn-success shadow-sm w-100"
+                  class="btn btn-primary w-100 location-btn"
                   id="current-location-button"
                 >
-                  Current
+                  Current location
                 </button>
               </div>
             </div>
@@ -65,22 +65,21 @@
           <div>
             <h1>Kyiv</h1>
             <ul>
-              <li id="input-time">Monday 19:20</li>
-              <li id="description">Rainy</li>
+              <li id="input-time"></li>
+              <li id="description"></li>
             </ul>
           </div>
           <div class="row">
-            <div class="col-6 d-flex Weather-temperature">
-              <img id="weather-icon" src="" alt="" />
+            <div class="col-7 d-flex Weather-temperature">
+              <img id="weather-icon" src="" alt="" width="64" />
               <strong id="setTempValue">22</strong>
               <a id="units" href="#">°C</a>
-              <!-- <span> <a href="#">°C</a> |<a href="#">°F</a> </span> -->
             </div>
-            <div class="col-6">
+            <div class="col-5">
               <ul>
                 <li>Precipitation : <span id="clouds"></span>%</li>
                 <li>Humidity : <span id="humidity"></span>%</li>
-                <li>Wind : <span id="wind">km/h</span></li>
+                <li>Wind : <span id="wind"></span></li>
               </ul>
             </div>
           </div>
