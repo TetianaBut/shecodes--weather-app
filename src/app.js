@@ -45,6 +45,7 @@ function setUnitTemperature(event) {
   document.querySelector("#wind").innerHTML = ` ${Math.round(
     currentWind
   )}${unitWind}`;
+  getForecast(positionCityName);
 }
 function formatDayForecast(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
