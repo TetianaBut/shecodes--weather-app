@@ -91,3 +91,19 @@ footer {
   font-weight: 700;
   line-height: 1.7;
 }
+.weather-forecast {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #454545;
+}
+.weather-week {
+  justify-content: center;
+}
+.weather-forecast-date {
+  color: #454545;
+  font-size: 16px;
+  padding: 0;
+}
+.weather-forecast-min {
+  opacity: 0.5;
+}
